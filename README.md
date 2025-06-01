@@ -1,5 +1,3 @@
-# 4TH PLACE SOLUTION
-
 ## Team C-B members
 | Name       | GitHub                | LinkedIn               | Zindi                 |
 |------------|------------------------|-------------------------|------------------------|
@@ -9,14 +7,14 @@
 
 
 ## Overview and Objectives
-
 This solution aims to develop an object detection model to identify multiple diseases in cocoa plant images. Our solution is designed to assist subsistence farmers in Africa by enabling disease detection using entry-level smartphones. The objectives include:
-
 - Accurate multi-class disease detection on cocoa plant images.
 - Generalization to unseen diseases not present in the training set.
 - Efficient deployment and inference on edge devices.
 
-Expected outcomes include increased early detection of plant diseases, reduced crop losses, and minimized pesticide use.
+![image](https://github.com/user-attachments/assets/2ebd3f31-4673-4ae9-ae8a-bca93cc80133)
+![image](https://github.com/user-attachments/assets/3e018a9c-854a-4873-a9ae-3f4d247612e6)
+
 
 ## Folder structure
 ```
@@ -36,7 +34,25 @@ Expected outcomes include increased early detection of plant diseases, reduced c
 * Model: We make use of [rfdetr](https://github.com/roboflow/rf-detr/tree/develop), a new SOTA real-time object detection model released by [roboflow](https://github.com/roboflow), that supports ONNX deployment natively.
 * Data preparation(data-preparation.ipynb):
   *  We split the dataset into train and validation sets using StratifiedKFold with k of 10. We use fold 0 for validation and the other folds for training.
-  *  We convert our split dataset into COCO format as required by the rfdetr 
+  *  We convert our split dataset into COCO format as required by the rfdetr
+ ```
+dataset/
+├── train/
+│   ├── _annotations.coco.json
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── ... (other image files)
+├── valid/
+│   ├── _annotations.coco.json
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   └── ... (other image files)
+└── test/
+    ├── _annotations.coco.json
+    ├── image1.jpg
+    ├── image2.jpg
+    └── ... (other image files)
+```
 *  Training(rfdetr-training.ipynb): We trained the RfDetr large for 10 epochs using the following configuration
    * epochs: 9
    * batch size: 2
