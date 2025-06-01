@@ -1,6 +1,6 @@
 # 4TH PLACE SOLUTION
 
-## C-B members
+## Team C-B members
 | Name       | GitHub                | LinkedIn               | Zindi                 |
 |------------|------------------------|-------------------------|------------------------|
 | Durojaiye Abisoye   | https://github.com/DurojaiyeAbisoye  |www.linkedin.com/in/abisoye-durojaiye | https://zindi.africa/users/Bisoye |
