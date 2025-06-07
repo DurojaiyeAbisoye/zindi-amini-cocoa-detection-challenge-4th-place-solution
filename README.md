@@ -33,7 +33,7 @@ This solution aims to develop an object detection model to identify multiple dis
 ## Approach
 * Model: We make use of [rfdetr](https://github.com/roboflow/rf-detr/tree/develop), a new SOTA real-time object detection model released by [roboflow](https://github.com/roboflow), that supports ONNX deployment natively.
 * Data preparation(data-preparation.ipynb):
-  *  We split the dataset into train and validation sets using StratifiedKFold with k of 10. We use fold 0 for validation and the other folds for training.
+  *  We split the dataset into train and validation sets using StratifiedGroupKFold with k of 10. We use fold 0 for validation and the other folds for training.
   *  We convert our split dataset into COCO format as required by the rfdetr
  ```
 dataset/
@@ -53,7 +53,7 @@ dataset/
     ├── image2.jpg
     └── ... (other image files)
 ```
-*  Training(rfdetr-training.ipynb): We trained the RfDetr large for 10 epochs using the following configuration
+*  Training(rfdetr-training.ipynb): We trained the RfDetr large for 9 epochs using the following configuration
    * epochs: 9
    * batch size: 2
    * grad_accum_steps: 8
